@@ -1,0 +1,16 @@
+textarea{
+    line-height: 0.571429;;
+    font-size: 0.875rem;
+    font-family: Public Sans,sans-serif;
+    font-weight: 400;
+    display: table-cell;
+    vertical-align: inherit;
+    text-align: center;
+    color: #212B36;
+    border: none;
+    height: auto;
+}
+
+.button-groups{
+    display: flex;
+}
