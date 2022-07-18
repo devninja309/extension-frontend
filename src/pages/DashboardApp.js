@@ -71,6 +71,7 @@ export default function DashboardApp() {
 
   const Register = async () => {
     try {
+
       const res = await axios.post('http://localhost:5000/domain', {
         'domain': domain,
       });
@@ -90,13 +91,15 @@ export default function DashboardApp() {
   };
 
   const deleteDomain = async (domain) => {
+    console.log('domain', domain);
     try {
       const res = await axios.delete('http://localhost:5000/domain', {
-        data: { domain },
+        data: { 'domain': domain}
       });
     } catch (error) {
       console.log(error.response.data.msg);
     }
+    window.location.reload();
   };
 
   return (
@@ -132,7 +135,7 @@ export default function DashboardApp() {
           </Button>
         </Stack>
         <Stack direction="row" alignItems="center" mb={5}>
-          <FormControl sx={{ mr: 5, width: 220 }} >
+          <FormControl sx={{ mr: 5, width: 220 }}>
             <InputLabel id="demo-multiple-chip-label">Language</InputLabel>
             <Select
               labelId="demo-multiple-chip-label"
